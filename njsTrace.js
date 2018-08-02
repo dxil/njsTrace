@@ -93,6 +93,10 @@ NJSTrace.prototype.inject = function(config) {
 	return this;
 };
 
+NJSTrace.prototype.mixinExt = function (ext = {}) {
+	if (Object.prototype.toString.call(ext) !== '[object Object]') ext = {}
+	this.tracer.mixinExt(ext)
+}
 /**
  * Simple logger function
  * @param {...(string|number|object)} arguments
